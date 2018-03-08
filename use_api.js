@@ -21,6 +21,10 @@ kogan.getSomething('products/1')
     var oneThingCategorySize = stuff["objects"][0]["size"]
     console.log("---oneThingCategorySize---")
     console.log(oneThingCategorySize)
+
+    var oneThingCategorySizeWidth = stuff["objects"][0]["size"]["width"]
+    console.log("---oneThingCategorySizeWidth---")
+    console.log(oneThingCategorySizeWidth)
   })
   .catch((error) => {
     console.log('error from .catch in getSomething definition: ', error)
