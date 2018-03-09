@@ -6,6 +6,7 @@ const startPoint = 'api/products/1'
 var currPage = startPoint // Initialise current page at starting point
 
 let airConRelArr = [] // Array for storing products in air conditioners category
+let cubicWeights = []
 
 //while (currPage !== null) {
     //var next = []
@@ -66,11 +67,20 @@ kogan.getPage(startPoint)
       var length = airConRelArr[i]["size"]["length"]
       var width = airConRelArr[i]["size"]["width"]
       var height = airConRelArr[i]["size"]["height"]
+      var cubicWeight = calculation.calCubicWeight(length, width, height)
 
-      console.log(`Cubic weight: ${calculation.calCubicWeight(length, width, height)} Kg`)
+      console.log(`Cubic weight: ${cubicWeight} Kg`)
       console.log()
+      
+      cubicWeights.push(cubicWeight)
     }
 
+    var cubicWeightTotal = 0
+    cubicWeights.forEach((weight) => {
+      cubicWeightTotal = cubicWeightTotal + weight
+    })
+    var averageCubicWeight = cubicWeightTotal / cubicWeights.length
+    console.log(`Average cubic weight of all air conditioning related items: ${averageCubicWeight} kg`)
     /*
     var oneThingCategorySize = stuff["objects"][0]["size"]
     console.log("---oneThingCategorySize---")
