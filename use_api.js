@@ -42,6 +42,7 @@ let cubicWeights = []
   //currPage = next // Goto next page
 //}
 
+/*
 kogan.getPage(startPoint)
   .then(res => {
     var page = res.data
@@ -54,14 +55,10 @@ kogan.getPage(startPoint)
         airConRelArr.push(currPageProducts[i])
       }
     }
-    /*
-    console.log("---airConRelArr---")
-    console.log(airConRelArr)
-    */
-
+    
     for(i = 0; i < airConRelArr.length; i++) {
-    // 
-    // 
+      // Calculate cubic weight weight of 
+      // each item in air conditioners category
       console.log(airConRelArr[i].title)
 
       var length = airConRelArr[i]["size"]["length"]
@@ -72,27 +69,25 @@ kogan.getPage(startPoint)
       console.log(`Cubic weight: ${cubicWeight} Kg`)
       console.log()
       
-      cubicWeights.push(cubicWeight)
+      // Add cubic weight of current item to collection of cubic weights
+      cubicWeights.push(cubicWeight) 
     }
 
-    var cubicWeightTotal = 0
-    cubicWeights.forEach((weight) => {
-      cubicWeightTotal = cubicWeightTotal + weight
+    //------------------------------------------------------------------
+    //  Find average cubic weight of items in Air Conditioners category
+    //------------------------------------------------------------------
+    // First, find total of cubic weight for all items in category first
+    var cubicWeightTotal = 0 // Initialse total at 0
+    cubicWeights.forEach((weight) => {             // Get running total
+      cubicWeightTotal = cubicWeightTotal + weight // of cubic weights
     })
+
+    // Divide total cubic weight by number of items in category to find average
     var averageCubicWeight = cubicWeightTotal / cubicWeights.length
     console.log(`Average cubic weight of all air conditioning related items: ${averageCubicWeight} kg`)
-    /*
-    var oneThingCategorySize = stuff["objects"][0]["size"]
-    console.log("---oneThingCategorySize---")
-    console.log(oneThingCategorySize)
-
-    var oneThingCategorySizeWidth = stuff["objects"][0]["size"]["width"]
-    console.log("---oneThingCategorySizeWidth---")
-    console.log(oneThingCategorySizeWidth)
-    */
   })
   .catch((error) => {
     console.log('error from .catch in getSomething definition: ', error)
   })
-
+*/
   
