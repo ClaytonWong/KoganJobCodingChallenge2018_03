@@ -1,23 +1,27 @@
-//import { calCubicWeight } from 'calculation'
-let calculation = require('./calculation')
 const kogan = require('./api/kogan')
 const startPoint = 'api/products/1'
 
-var currPage = startPoint // Initialise current page at starting point
-
+let calculation = require('./calculation')
 let airConRelArr = [] // Array for storing products in air conditioners category
 let cubicWeights = []
 
+var currPage = startPoint // Initialise current page at starting point
+
+kogan.getAllPages(startPoint)
+/*
 //while (currPage !== null) {
     //var next = []
-/*   kogan.getPage(currPage)
+   kogan.getPage(currPage)
     .then(res => {
       //while(currPage !== null) {
         var page = res.data
         var next = page["next"]
-        console.log("---currPage---")
-        console.log(currPage)
+        
+        console.log("---page---")
+        console.log(page)
+        
         currPage = next
+
         
         kogan.getPage(currPage)
         .then(res => {
@@ -31,16 +35,17 @@ let cubicWeights = []
           //}
         })
         .catch((error) => {
-          console.log('error from .catch in getSomething definition: ', error)
+          console.log('error from .catch in getPage definition: ', error)
         })
-
+        
       //}
     })
     .catch((error) => {
-      console.log('error from .catch in getSomething definition: ', error)
-    }) */
+      console.log('error from .catch in getPage definition: ', error)
+    })
   //currPage = next // Goto next page
 //}
+*/
 
 /*
 kogan.getPage(startPoint)
@@ -87,7 +92,7 @@ kogan.getPage(startPoint)
     console.log(`Average cubic weight of all air conditioning related items: ${averageCubicWeight} kg`)
   })
   .catch((error) => {
-    console.log('error from .catch in getSomething definition: ', error)
+    console.log('error from .catch in getPage definition: ', error)
   })
 */
   
