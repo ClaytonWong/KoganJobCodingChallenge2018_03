@@ -1,15 +1,13 @@
 const kogan = require('./api/kogan')
+const startPoint = 'products/1'
 
-/*
-kogan.getSomething('products/1')
+
+kogan.getPage(startPoint)
   .then(res => {
     var stuff = res.data
     console.log("--stuff---")
     console.log(stuff)
-    //console.log(`Found ${stuff.length} things from kogan:`)
-    //stuff.forEach(thing => {
-    //  console.log(`${thing.name}`)
-    //})
+    
     
     var oneThing = stuff["objects"][0]
     console.log("---oneThing---")
@@ -30,16 +28,3 @@ kogan.getSomething('products/1')
   .catch((error) => {
     console.log('error from .catch in getSomething definition: ', error)
   })
-  */
-
-kogan.getNext('products/1')
-.then(res => {
-  var stuff = res.data
-          
-  var next = stuff["next"]
-  console.log("---next---")
-  console.log(next)
-})
-.catch((error) => {
-  console.log('error from .catch in getSomething definition: ', error)
-})
