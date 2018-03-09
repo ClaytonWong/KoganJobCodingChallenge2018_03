@@ -1,19 +1,23 @@
 const kogan = require('./api/kogan')
 const startPoint = 'api/products/1'
 
-var airConRelArr = [] // Array for storing products in air conditioners category
+let airConRelArr = [] // Array for storing products in air conditioners category
 
 kogan.getPage(startPoint)
   .then(res => {
     var page = res.data
     var currPageProducts = page["objects"]
-    
+        
     for(i = 0; i < currPageProducts.length; i++) {
-      var product = currPageProducts[i]
-
-      console.log("---Product---")
-      console.log(product)
+      // If current product is in air conditioners category,
+      // add it to "air con related product array"
+      if (currPageProducts[i]["category"] == 'Air Conditioners') {
+        airConRelArr.push(currPageProducts[i])
+      }
     }
+
+    console.log("---airConRelArr---")
+    console.log(airConRelArr)
 
     /*
     var oneThing = stuff["objects"][0]
@@ -36,3 +40,5 @@ kogan.getPage(startPoint)
   .catch((error) => {
     console.log('error from .catch in getSomething definition: ', error)
   })
+
+  
