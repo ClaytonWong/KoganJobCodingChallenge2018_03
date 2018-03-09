@@ -69,14 +69,19 @@ function traversePages(startPoint) {
           console.log("")
           console.log(`Average cubic weight of all air conditioning related items: ${averageCubicWeight} kg`)
 
-          return true
+          // Return true to avoid printing error messages to screen,
+          // you have also reached the "base case" of recursion
+          return true 
         }
 
-        return traversePages(next)
+        // Get traversePage function to call itself (ie. recursion)
+        // but this time, use part of URL for next page as parameter
+        return traversePages(next) 
     })
     .catch((error) => {
       console.log('error from .catch in traversePages definition: ', error)
     })
 }
+
 traversePages(startPoint)
   
