@@ -1,5 +1,6 @@
 const kogan = require('./api/kogan')
 
+/*
 kogan.getSomething('products/1')
   .then(res => {
     var stuff = res.data
@@ -29,3 +30,16 @@ kogan.getSomething('products/1')
   .catch((error) => {
     console.log('error from .catch in getSomething definition: ', error)
   })
+  */
+
+kogan.getNext('products/1')
+.then(res => {
+  var stuff = res.data
+          
+  var next = stuff["next"]
+  console.log("---next---")
+  console.log(next)
+})
+.catch((error) => {
+  console.log('error from .catch in getSomething definition: ', error)
+})

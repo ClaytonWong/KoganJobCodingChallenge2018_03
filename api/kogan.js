@@ -8,4 +8,8 @@ function getSomething(x) {
   return kogan.get(x)
 }
 
-module.exports = { getSomething }
+function getNext(x) {
+  return kogan.get(x)
+}
+
+module.exports = { getSomething, getNext }
