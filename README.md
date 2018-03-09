@@ -16,7 +16,17 @@ Solution type: Command line application
 4) Extract the zip file in the directory of your choice
 5) Open up a command line or terminal window
 6) In command line or terminal window, go to directory where you extracted the zip file
-7) If you already have Node.js installed on your machine, you can find 
+7) If you have Yarn installed, type in: 
+   
+   yarn
+
+   then press enter. This will download the required npm package, Axios.
+   
+   Alternatively, you can use npm to install Axios by typing in the following:
+
+   npm install axios
+
+8) If you already have Node.js installed on your machine, you can find 
    the average cubic weight by typing in the following:
     
    node traversePages.js
