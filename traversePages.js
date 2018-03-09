@@ -57,7 +57,7 @@ function traversePages(startPoint) {
           //  Find average cubic weight of items in Air Conditioners category
           //------------------------------------------------------------------
           // First, find total of cubic weight for all items in category first
-          var cubicWeightTotal = 0 // Initialse total at 0
+          var cubicWeightTotal = 0 // Initialise total at 0
           cubicWeights.forEach((weight) => {             // Get running total
             cubicWeightTotal = cubicWeightTotal + weight // of cubic weights
           })
