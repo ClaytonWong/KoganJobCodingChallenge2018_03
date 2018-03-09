@@ -1,5 +1,5 @@
-import calCubicWeight from '/calculation'
-
+//import { calCubicWeight } from 'calculation'
+let calculation = require('./calculation')
 const kogan = require('./api/kogan')
 const startPoint = 'api/products/1'
 
@@ -58,9 +58,18 @@ kogan.getPage(startPoint)
     console.log(airConRelArr)
     */
 
-    airConRelArr.forEach((item) => {
-      console.log(item)
-    })
+    for(i = 0; i < airConRelArr.length; i++) {
+    // 
+    // 
+      console.log(airConRelArr[i].title)
+
+      var length = airConRelArr[i]["size"]["length"]
+      var width = airConRelArr[i]["size"]["width"]
+      var height = airConRelArr[i]["size"]["height"]
+
+      console.log(`Cubic weight: ${calculation.calCubicWeight(length, width, height)} Kg`)
+      console.log()
+    }
 
     /*
     var oneThingCategorySize = stuff["objects"][0]["size"]

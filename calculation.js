@@ -28,6 +28,6 @@ function calCubicWeight( itemLength_cm, itemWidth_cm, itemHeight_cm) {
   return itemCubicWeight;
 }
 
-module.exports = { calCubicWeight }
+module.exports = { calCubicWeight };
 
-//console.log( `Test item cubic weight: ${calCubicWeight( itemLength_cm, itemWidth_cm, itemHeight_cm)} Kgs `)
+//console.log( `Test item cubic weight: ${calCubicWeight( itemLength_cm, itemWidth_cm, itemHeight_cm)} Kgs `);
